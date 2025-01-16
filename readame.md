@@ -1,0 +1,1 @@
+##Projeto feito em uma atividade da alura, a inteção era um interface onde conseguimos adicionar items atraves de uma API, usei bastante JavaScript, toda a interação com os cards é feita com JavaScript.

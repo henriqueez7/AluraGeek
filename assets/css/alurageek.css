@@ -1,0 +1,230 @@
+/* Reset e estilo base */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: scroll; /* Garante que a rolagem vertical esteja sempre habilitada */
+}
+
+/* CABEÇALHO */
+header {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    font-weight: normal;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    flex: 1; /* Isso garante que o container principal ocupe o espaço disponível */
+    padding: 20px;
+    max-height: calc(100vh - 200px); /* Define uma altura máxima para o container principal */
+    overflow-y: auto; /* Habilita o overflow vertical para o container principal */
+}
+
+/* Seção de produtos */
+.sessaoProdutos {
+    flex: 1;
+    margin-right: 20px;
+    overflow-y: auto; /* Habilita o overflow vertical para a seção de produtos */
+}
+
+.sessaoProdutos h1 {
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-align: center; /* Centraliza o título em todas as telas */
+}
+
+.listaProdutos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 200px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Defina a altura máxima desejada */
+    object-fit: cover; /* Garante que a imagem seja cortada para caber no contêiner */
+}
+
+.cardInformacao {
+    margin-top: 10px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+
+.cardInformacao .info { 
+    display: flex; 
+    flex-direction: column;
+}
+
+.cardValor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardValor p {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilo para o delete-icon */
+.card .delete-icon {
+    width: 20px; 
+    height: 20px; 
+    cursor: pointer; 
+    justify-content: space-between;
+}
+
+.mensagemProdutos {
+    display: none; /* Será exibido apenas quando não houver produtos */
+    color: #777;
+    margin-top: 20px;
+}
+
+/* Exibir a mensagem quando não houver produtos */
+.listaProdutos:empty + .mensagemProdutos {
+    display: block;
+}
+
+/* Seção de adicionar produtos */
+.addProdutos {
+    flex: 1;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    overflow-y: auto; /* Habilita o overflow vertical para a seção de adicionar produtos */
+}
+
+.addProdutos h1 {
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+}
+
+button[type="reset"] {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Rodapé */
+footer {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    border-top: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+footer img {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sessaoProdutos,
+    .addProdutos {
+        flex: none;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .sessaoProdutos h1{
+        margin: 3rem 0px 3rem 0px;
+    }
+
+    .addProdutos {
+        order: 1; /* A seção de adicionar produtos será exibida primeiro */
+    }
+
+    .sessaoProdutos {
+        order: 2; /* A seção de produtos será exibida em segundo */
+        text-align: center; /* Centraliza o título em telas menores */
+    }
+}

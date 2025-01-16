@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/alurageek.css">
+    <script src="./assets/js/main.js" defer type="module"></script>
+    <script src="./assets/js/criarProdutos.js" defer type="module"></script>
+    
+
+    <title>ALURAGEEK</title>
+</head>
+<body>
+    <header>
+        <h1>AluraGeek</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="sessaoProdutos">
+                <h1>Meus Produtos</h1>
+                <div class="listaProdutos">
+
+                </div>
+                <p class="mensagemProdutos">
+                    Nenhum produto foi encontrado.
+                </p>
+            </section>
+
+            <section class="addProdutos"> 
+                <h1>Adicionar Produto</h1> 
+                <form id="formularioProdutos"> 
+                    <label for="nomeProduto">Nome do Produto:</label> 
+                    <input type="text" id="nomeProduto" name="nomeProduto" required> 
+                    
+                    <label for="precoProduto">Preço:</label> 
+                    <input type="number" id="precoProduto" name="precoProduto" required> 
+                    
+                    <label for="ProdutoImagem">Imagem:</label> 
+                    <input type="file" id="ProdutoImagem" name="ProdutoImagem" accept="image/*" required> 
+                    
+                    <div class="form-buttons"> 
+                        <button type="submit">Adicionar</button> 
+                        <button type="reset">Limpar</button> 
+                    </div> 
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer> 
+        <img src="assets/img/Logo.svg" alt="Logo"> 
+        <p>Desenvolvido por Pedro Henrique</p> 
+        <p>© 2025 Desenvolvido para Alura</p>
+    </footer>
+
+    <template id="produtoCard">
+        <div class="card">
+            <img src="" alt="">
+            <div class="cardInformacao">
+                <p>Nome do Produto</p>
+                <div class="CardValor"> 
+                    <p>Preço: $XXX.XX</p>
+                    <img src="" alt="">
+                </div>
+            </div>
+        </div>
+    </template>
+</body>
+</html>
